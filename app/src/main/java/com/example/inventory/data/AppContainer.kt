@@ -16,6 +16,7 @@
 
 package com.example.inventory.data
 
+import ItemsRepository
 import android.content.Context
 
 /**
@@ -33,6 +34,6 @@ class AppDataContainer(private val context: Context) : AppContainer {
      * Implementation for [ItemsRepository]
      */
     override val itemsRepository: ItemsRepository by lazy {
-        OfflineItemsRepository()
+        OfflineItemsRepository(InventoryDataBase.getDatabase(context).itemDao())
     }
 }
