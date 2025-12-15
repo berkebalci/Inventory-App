@@ -16,7 +16,7 @@
 
 package com.example.inventory.data
 
-import ItemsRepository
+import com.example.inventory.data.ItemsRepository
 import android.content.Context
 
 /**

@@ -16,7 +16,7 @@
 
 package com.example.inventory.ui.item
 
-import ItemsRepository
+import com.example.inventory.data.ItemsRepository
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
