@@ -109,7 +109,7 @@ private fun HomeBody(
     modifier: Modifier = Modifier,
     contentPadding: PaddingValues = PaddingValues(0.dp),
 ) {
-    Column(
+        Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = modifier,
     ) {
