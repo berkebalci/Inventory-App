@@ -7,6 +7,7 @@ import com.example.inventory.data.Item
 import org.junit.runner.RunWith
 import com.example.inventory.data.ItemDAO
 import junit.framework.TestCase.assertEquals
+import junit.framework.TestCase.assertTrue
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import org.junit.After
@@ -67,8 +68,19 @@ class ItemDaoTest {
         val item1= itemDao.update(Item(1, "Apples", 15.0, 25))
         val item2 = itemDao.update(Item(2, "Bananas", 5.0, 50))
         val allItems = itemDao.getAllItems().first()
-        assertEquals(allItems[0], item1)
-        assertEquals(allItems[1], item2)
+        assertEquals(allItems[0], Item(1, "Apples", 15.0, 25))
+        assertEquals(allItems[1], Item(2, "Bananas", 5.0, 50))
+
+    }
+
+    @Test
+    @Throws(Exception::class)
+    fun daoDeleteItem_deletedItemInDb() = runBlocking{
+        addTwoItemsToDb()
+        itemDao.delete(item1)
+        itemDao.delete(item2)
+        val allItems = itemDao.getAllItems().first()
+        assertTrue(allItems.isEmpty())
 
     }
 
