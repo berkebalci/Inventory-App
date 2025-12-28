@@ -21,6 +21,7 @@ import com.example.inventory.data.ItemsRepository
 import kotlinx.coroutines.flow.Flow
 
 class OfflineItemsRepository(private val itemDao: ItemDAO) : ItemsRepository {
+    // : kullanildigi zaman ya inheritance ya da implenetiation(interface'in) olur.
     override fun getAllItemsStream(): Flow<List<Item>> = itemDao.getAllItems()
 
     override fun getItemStream(id: Int): Flow<Item?> = itemDao.getItem(id)

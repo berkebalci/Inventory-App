@@ -57,5 +57,21 @@ class ItemDaoTest {
         val allItems = itemDao.getAllItems().first()
         assertEquals(allItems[0], item1)
     }
+    //Add a test for the DAO function to update an entity.
+
+
+    @Test
+    @Throws(Exception::class)
+    fun daoUpdateItem_updatedItemInDb() = runBlocking{
+    addTwoItemsToDb()
+        val item1= itemDao.update(Item(1, "Apples", 15.0, 25))
+        val item2 = itemDao.update(Item(2, "Bananas", 5.0, 50))
+        val allItems = itemDao.getAllItems().first()
+        assertEquals(allItems[0], item1)
+        assertEquals(allItems[1], item2)
+
+    }
+
+
 
 }
