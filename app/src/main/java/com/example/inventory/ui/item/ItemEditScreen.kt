@@ -50,6 +50,7 @@ fun ItemEditScreen(
     onNavigateUp: () -> Unit,
     modifier: Modifier = Modifier,
     viewModel: ItemEditViewModel = viewModel(factory = AppViewModelProvider.Factory)
+    //test yaptigimiz icin bu sekilde yaptik.
 ) {
 
 
